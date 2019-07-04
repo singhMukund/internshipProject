@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1021216681585",
+    "firebase_url": "https://app6-a608f.firebaseio.com",
+    "project_id": "app6-a608f",
+    "storage_bucket": "app6-a608f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1021216681585:android:629c55833217af65",
+        "android_client_info": {
+          "package_name": "com.example.rahul.app6"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1021216681585-tenghisvs97b9i4hc54hef5mempcthbb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.rahul.app6",
+            "certificate_hash": "b005a4eb296a14bb09a15c32aa95f9521b8217ef"
+          }
+        },
+        {
+          "client_id": "1021216681585-crrgi6j13ppv3phudus9scbk9k16muqi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBInePU3IUlfvLKjqsXvoEoXHNw6NKd5A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1021216681585-crrgi6j13ppv3phudus9scbk9k16muqi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
