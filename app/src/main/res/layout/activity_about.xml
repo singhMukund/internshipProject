@@ -15,7 +15,7 @@
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:title="About Beltron App"
         app:titleMarginStart="40dp"
-        app:logo="@drawable/ic_menu_black_24dp"/>
+        app:logo="@mipmap/ic_launcher"/>
 
     <TextView
         android:id="@+id/textView4"
@@ -24,14 +24,14 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/toolbar5"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="36dp"
         android:fontFamily="@font/amaranth"
         android:gravity="center"
-        android:padding="10dp"
+        android:padding="15dp"
         android:text="@string/about_section"
-        android:textAlignment="center"
-        android:textColor="@android:color/background_light"
-        android:textSize="24sp"
+        android:textAlignment="viewStart"
+        android:textColor="@color/colorAccent"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <TextView
@@ -41,14 +41,14 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/textView4"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="26dp"
         android:fontFamily="@font/amaranth"
         android:gravity="center"
-        android:padding="10dp"
+        android:padding="15dp"
         android:text="@string/about_section2"
-        android:textAlignment="center"
-        android:textColor="@android:color/background_light"
-        android:textSize="24sp"
+        android:textAlignment="viewStart"
+        android:textColor="@color/colorAccent"
+        android:textSize="22sp"
         android:textStyle="bold" />
 
 </RelativeLayout>

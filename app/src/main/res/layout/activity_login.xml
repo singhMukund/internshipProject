@@ -13,29 +13,36 @@
         android:layout_height="wrap_content"
         android:background="@color/colorAccent"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:logo="@drawable/ic_menu_black_24dp"
+        app:logo="@mipmap/ic_launcher"
         app:title="BELTRON APP"
         app:titleMarginStart="40dp" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:layout_below="@+id/toolbar2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="32dp"
-        app:srcCompat="@mipmap/ic_login" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView"
+        android:layout_below="@+id/toolbar2"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="61dp"
         android:fontFamily="@font/amaranth"
         android:text="@string/beltron_login"
         android:textColor="@color/colorAccent"
-        android:textSize="24sp" />
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/textView"
+        android:layout_marginTop="24dp"
+        android:padding="10dp"
+        android:text="@string/login_hint"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
+        android:textSize="18sp"
+        android:textStyle="italic" />
 
     <EditText
         android:id="@+id/editText"
@@ -43,9 +50,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_centerVertical="true"
+        android:layout_below="@+id/textView22"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
+        android:layout_marginTop="21dp"
         android:background="@drawable/edtext_outline"
         android:ems="10"
         android:gravity="center"
@@ -59,12 +67,12 @@
         android:id="@+id/editText4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/editText"
-        android:layout_marginTop="21dp"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
+        android:layout_marginTop="26dp"
         android:background="@drawable/edtext_outline"
         android:ems="10"
         android:gravity="center"
@@ -81,9 +89,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/editText4"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="21dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:layout_marginTop="37dp"
         android:background="@drawable/btn_outline"
         android:fontFamily="@font/amaranth"
         android:onClick="showUserDetails"
@@ -91,28 +99,5 @@
         android:text="@string/login"
         android:textColor="@android:color/background_light"
         android:textSize="24sp" />
-
-    <TextView
-        android:id="@+id/forgotpass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/button"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="11dp"
-        android:fontFamily="@font/amaranth"
-        android:gravity="center"
-        android:onClick="resetPass"
-        android:text="@string/forgot_your_password"
-        android:textColor="@color/colorAccent"
-        android:textSize="18sp"
-        android:textStyle="italic" />
-
-    <ProgressBar
-        android:id="@+id/progressBar"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_gravity="center|bottom"
-        android:layout_marginBottom="20dp"
-        android:visibility="gone" />
 
 </RelativeLayout>

@@ -1,5 +1,6 @@
 package com.example.rahul.app6;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -16,10 +17,13 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText inputEmail, inputPass;
-    private ProgressBar progressBar;
+    private ProgressDialog mProgressDialog;
     private FirebaseAuth auth;
 
     @Override
@@ -27,7 +31,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         auth = FirebaseAuth.getInstance();
         if (auth.getCurrentUser() != null) {
-            startActivity(new Intent(LoginActivity.this, UserActivity.class));
+            startActivity(new Intent(LoginActivity.this, MainActivity.class));
             finish();
         }
 
@@ -35,7 +39,7 @@ public class LoginActivity extends AppCompatActivity {
 
         inputEmail = (EditText)findViewById(R.id.editText);
         inputPass = (EditText)findViewById(R.id.editText4);
-        progressBar = (ProgressBar)findViewById(R.id.progressBar);
+        mProgressDialog = new ProgressDialog(this);
 
         android.support.v7.widget.Toolbar toolbar = findViewById(R.id.toolbar2);
         setSupportActionBar(toolbar);
@@ -58,12 +62,17 @@ public class LoginActivity extends AppCompatActivity {
             case R.id.abt:
                 startActivity(new Intent(getApplicationContext(), AboutActivity.class));
                 break;
-            case R.id.ext:
-                finish();
-                System.exit(0);
-                break;
         }
         return true;
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (auth.getCurrentUser() != null) {
+            startActivity(new Intent(LoginActivity.this, MainActivity.class));
+            finish();
+        }
     }
 
     public void showUserDetails(View view) {
@@ -80,23 +89,29 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
 
-        progressBar.setVisibility(View.VISIBLE);
+        mProgressDialog.setMessage("Logging User...");
+        mProgressDialog.show();
 
         auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                if (!task.isSuccessful()) {
+                if(auth.getCurrentUser().isEmailVerified()) {
+                    if (!task.isSuccessful()) {
                         Toast.makeText(LoginActivity.this, "Login Failed :(", Toast.LENGTH_LONG).show();
+                        mProgressDialog.hide();
+                    } else {
+                        mProgressDialog.hide();
+                        Intent intent2 = new Intent(LoginActivity.this, MainActivity.class);
+                        startActivity(intent2);
+                        finish();
+                    }
                 } else {
-                    Intent intent = new Intent(LoginActivity.this, UserActivity.class);
-                    startActivity(intent);
-                    finish();
+                    mProgressDialog.hide();
+                    Toast.makeText(LoginActivity.this, "Verify your Email, before you Login :(", Toast.LENGTH_SHORT).show();
+                    auth.signOut();
                 }
+
             }
         });
-    }
-
-    public void resetPass(View view) {
-        startActivity(new Intent(this, ResetPasswordActivity.class));
     }
 }

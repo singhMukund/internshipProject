@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context="com.example.rahul.app6.UpdateActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:logo="@mipmap/ic_launcher"
+        app:title="UPDATE ORDER DETAILS"
+        app:titleMarginStart="40dp" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/background_light"
+        android:fontFamily="@font/amaranth"
+        android:gravity="center_horizontal"
+        android:padding="10dp"
+        android:text="@string/select_field_to_update"
+        android:textColor="@color/colorAccent"
+        android:textSize="25sp" />
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView6"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/edtext_outline"
+        android:entries="@array/update_field"
+        android:padding="15dp" />
+
+    <EditText
+        android:id="@+id/editText14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spinner2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="45dp"
+        android:ems="10"
+        android:fontFamily="@font/amaranth"
+        android:gravity="center_horizontal"
+        android:hint="@string/enter_new_value"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="25sp"
+        android:textStyle="italic" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText14"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="73dp"
+        android:background="@drawable/btn_outline"
+        android:fontFamily="@font/amaranth"
+        android:gravity="center_horizontal"
+        android:padding="8dp"
+        android:text="@string/update"
+        android:textAllCaps="false"
+        android:textColor="@android:color/background_light"
+        android:textSize="25sp"
+        android:textStyle="bold|italic"
+        android:onClick="updateOrder"/>
+
+</RelativeLayout>

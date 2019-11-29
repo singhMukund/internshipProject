@@ -6,7 +6,4 @@
     <item
         android:id="@+id/abt"
         android:title="@string/About" />
-    <item
-        android:id="@+id/ext"
-        android:title="@string/Exit" />
 </menu>
